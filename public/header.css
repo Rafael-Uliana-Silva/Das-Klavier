@@ -1,5 +1,6 @@
 header {
-  background: #333333;
+  background: rgb(33,33,33);
+  background: linear-gradient(130deg, rgba(33,33,33,1) 0%, rgba(32,32,32,1) 35%);
 }
 
 header .container {
