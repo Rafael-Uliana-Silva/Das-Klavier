@@ -1,6 +1,7 @@
 @import "normalize.css";
 @import "header.css";
 @import "intro.css";
+@import "produtos.css";
 
 h1, h2, a, p, a{
   font-family: Cardo;

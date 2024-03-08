@@ -2,8 +2,33 @@ import React from "react";
 import Container from "./Container"
 
 const Header = () => {
+  const [scroll, setScroll] = React.useState(false);
+  const [scrollTop, setScrollTop] = React.useState(0);
+  const [visible, setVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollTop = window.scrollY;
+
+      if (currentScrollTop > scrollTop) {
+        setScroll(true);
+      } else {
+        setScroll(false)
+      }
+
+      setScrollTop(currentScrollTop);
+      setVisible(currentScrollTop === 0)
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollTop]);
+
   return (
-    <header>
+    <header className={`header ${scroll ? 'scrollou' : ''} ${visible ? 'visible' : ''}`}>
       <Container>
         <div>
           <a href="#"><svg width="190" height="62" viewBox="0 0 190 62" fill="#fff" xmlns="http://www.w3.org/2000/svg">

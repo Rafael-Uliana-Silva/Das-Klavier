@@ -1,9 +1,9 @@
 .intro {
-  padding: 30px;
   background: rgb(33,33,33);
   background: linear-gradient(130deg, rgba(33,33,33,1) 0%, rgba(32,32,32,1) 35%);
   color: #fff;
   padding-bottom: 70px;
+  padding-top: 140px;
 }
 
 .intro h1 {
