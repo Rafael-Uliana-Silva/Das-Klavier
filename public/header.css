@@ -16,6 +16,7 @@ header .container {
 
 .nav li {
   position: relative;
+  cursor: pointer;
 }
 
 .nav li + li {
@@ -56,3 +57,26 @@ header .container {
 .visible {
   color: #fff;
 }
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  background: #fff;
+  padding: 10px 30px;
+  margin-top: 15px;
+  border: 3px solid #000;
+}
+ 
+.dropdownMenu li {
+  color: #232323;
+  margin-bottom: 15px;
+}
+
+.dropdownMenu li::after {
+  background-color: #232323;
+}
+
+.dropdownMenu.ativo {
+  display: block;  
+}
+

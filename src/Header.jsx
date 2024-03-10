@@ -1,10 +1,12 @@
 import React from "react";
 import Container from "./Container"
+import { instrumentos } from "./Produtos";
 
 const Header = () => {
   const [scroll, setScroll] = React.useState(false);
   const [scrollTop, setScrollTop] = React.useState(0);
   const [visible, setVisible] = React.useState(false);
+  const [dropdown, setDropdown] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +29,12 @@ const Header = () => {
     };
   }, [scrollTop]);
 
+  const handleClick = () => {
+    setDropdown(!dropdown)
+  }
+
+  const classeDropdown = dropdown ? "ativo" : "";
+
   return (
     <header className={`header ${scroll ? 'scrollou' : ''} ${visible ? 'visible' : ''}`}>
       <Container>
@@ -48,9 +56,17 @@ const Header = () => {
         </div>
         <div>
           <ul className="nav">
-            <li><a href="#"><svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <li onClick={handleClick}><a><svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1L7 7L13 1" stroke="#fff"/>
-            </svg>Instrumentos</a></li>
+            </svg>Instrumentos</a>
+              <div>
+                <ul className={`dropdownMenu ${classeDropdown}`}>
+                  {instrumentos.map((instrumento, index) => (
+                    <a key={index} href="#"><li>{instrumento.titulo}</li></a>
+                  ))}
+                </ul>
+              </div>
+            </li>
             <li><a href="#">Sobre</a></li>
             <li><a href="#">Contato</a></li>
           </ul>

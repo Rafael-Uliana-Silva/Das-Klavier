@@ -1,37 +1,37 @@
 import React from "react";
 import Container from "./Container";
 
-const Produtos = () => {
+const instrumentos = [
+  {titulo: "Cordas Friccionadas",
+  imgSrc: "/img/corda-fric-img.jpg",
+  },
+  {titulo: "Cordas Dedilhadas",
+  imgSrc: "/img/corda-ded-img.jpg",
+  },
+  {titulo: "Pianos",
+  imgSrc: "/img/piano-img.jpg",
+  },
+  {titulo: "Teclados",
+  imgSrc: "/img/teclado-img.jpg",
+  },
+  {titulo: "Sintetizadores",
+  imgSrc: "/img/sintetizador-img.jpg",
+  },
+  {titulo: "Sopro",
+  imgSrc: "/img/sopro-img.jpg",
+  },
+  {titulo: "Metais",
+  imgSrc: "/img/metais-img.jpg",
+  },
+  {titulo: "Percussivos",
+  imgSrc: "/img/percussivo-img.jpg",
+  },
+  {titulo: "Acessórios",
+  imgSrc: "/img/acess-img.jpg",
+  },
+]
 
-  const instrumentos = [
-    {titulo: "Cordas Friccionadas",
-    imgSrc: "/img/corda-fric-img.jpg",
-    },
-    {titulo: "Cordas Dedilhadas",
-    imgSrc: "/img/corda-ded-img.jpg",
-    },
-    {titulo: "Pianos",
-    imgSrc: "/img/piano-img.jpg",
-    },
-    {titulo: "Teclados",
-    imgSrc: "/img/teclado-img.jpg",
-    },
-    {titulo: "Sintetizadores",
-    imgSrc: "/img/sintetizador-img.jpg",
-    },
-    {titulo: "Sopro",
-    imgSrc: "/img/sopro-img.jpg",
-    },
-    {titulo: "Metais",
-    imgSrc: "/img/metais-img.jpg",
-    },
-    {titulo: "Percussivos",
-    imgSrc: "/img/percussivo-img.jpg",
-    },
-    {titulo: "Acessórios",
-    imgSrc: "/img/acess-img.jpg",
-    },
-  ]
+const Produtos = () => {
 
   return (
     <div className="produtos">
@@ -49,7 +49,8 @@ const Produtos = () => {
           </div>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Produtos;
+export { Produtos, instrumentos };
+
